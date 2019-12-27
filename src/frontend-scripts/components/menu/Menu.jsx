@@ -203,24 +203,28 @@ class Menu extends React.Component {
 			<div>
 				<div className="menu-container" style={{ zIndex: 9999 }}>
 					<section className={classes}>
-						<a href="/">{userInfo && userInfo.gameSettings && userInfo.gameSettings.safeForWork ? 'SH.io' : 'SECRET HITLER.io'}</a>
+						<a className="main-title" href="/">
+							{userInfo && userInfo.gameSettings && userInfo.gameSettings.safeForWork ? 'SH.io' : 'SECRET HITLER.io'}
+						</a>
+						<div>
+							<a
+								className={
+									this.props.midSection !== 'game' && this.props.version.lastSeen && this.props.version.current.number !== this.props.version.lastSeen
+										? 'patch-alert'
+										: null
+								}
+								onClick={this.props.readPatchNotes}
+							>
+								{' '}
+								{`v${this.props.version.current.number}`}{' '}
+							</a>
+						</div>
 						<div className="center-menu-links">
 							<span>
+								<a href="#/game">Lobby</a> |{' '}
 								<a style={{ textDecoration: 'underline' }} target="_blank" href="/tou">
 									Site Rules
 								</a>{' '}
-								|{' '}
-								<a
-									className={
-										this.props.midSection !== 'game' && this.props.version.lastSeen && this.props.version.current.number !== this.props.version.lastSeen
-											? 'patch-alert'
-											: null
-									}
-									onClick={this.props.readPatchNotes}
-								>
-									{' '}
-									{`v${this.props.version.current.number}`}{' '}
-								</a>
 								|{' '}
 								<a rel="noopener noreferrer" target="_blank" href="https://github.com/cozuya/secret-hitler/issues">
 									Feedback
@@ -301,21 +305,10 @@ class Menu extends React.Component {
 					<section className="nav-menu">
 						<div className="center-menu-links">
 							<span>
+								<a href="#/game">Lobby</a> |{' '}
 								<a style={{ textDecoration: 'underline' }} target="_blank" href="/tou">
 									Site Rules
 								</a>{' '}
-								|{' '}
-								<a
-									className={
-										this.props.midSection !== 'game' && this.props.version.lastSeen && this.props.version.current.number !== this.props.version.lastSeen
-											? 'patch-alert'
-											: null
-									}
-									onClick={this.props.readPatchNotes}
-								>
-									{' '}
-									{`v${this.props.version.current.number}`}{' '}
-								</a>
 								|{' '}
 								<a rel="noopener noreferrer" target="_blank" href="https://github.com/cozuya/secret-hitler/issues">
 									Feedback

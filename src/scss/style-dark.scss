@@ -874,17 +874,19 @@ div {
 	width: 95%;
 	max-width: 1920px;
 	> a {
-		max-height: 36px;
-		margin-top: 3px;
+		&.main-title {
+			max-height: 36px;
+			margin-top: 3px;
 
-		font-family: 'germania one', germania, sans-serif;
-		font-size: 38px;
-		text-shadow: 1px 1px 2px black;
-		padding: 10px 0 0 0;
-		display: inline-block;
-		letter-spacing: 2px;
-		&.hover {
-			color: black;
+			font-family: 'germania one', germania, sans-serif;
+			font-size: 38px;
+			text-shadow: 1px 1px 2px black;
+			padding: 10px 0 0 0;
+			display: inline-block;
+			letter-spacing: 2px;
+			&.hover {
+				color: black;
+			}
 		}
 	}
 	> p {
@@ -1084,7 +1086,6 @@ $eloValues: (1500 0.3 1 0.3) (1600 0.3 1 0.5) (1849 0 1 0.7) (1850 1 1 0.7) (190
 .player-small-cardback.thejuststopo {
 	box-shadow: 0 0 5px 2px #dc143c !important;
 }
-
 
 #confetti {
 	position: absolute;
